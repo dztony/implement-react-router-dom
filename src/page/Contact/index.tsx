@@ -17,6 +17,9 @@ function Contact() {
         用户名 - {contact.first} - {contact.last}
       </div>
 
+      <button>
+        <Link to={`/contact/${contact.id}/edit`}>编辑</Link>
+      </button>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import Root from "./page/Root";
 import ErrorPage from "./page/ErrorPage";
 import Contact from "./page/Contact";
 import { getContactById, loaderContactList } from "./util/loader.ts";
+import Edit from "./page/Edit";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
       {
         path: '/contact/:contactId',
         element: <Contact />,
+        loader: getContactById,
+      },
+      {
+        path: '/contact/:contactId/edit',
+        element: <Edit />,
         loader: getContactById,
       },
     ],
