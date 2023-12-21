@@ -13,7 +13,6 @@ function Edit() {
         编辑用户 id {contact.id} 的资料
       </h3>
 
-
       <button>
         <Link to={`/contact/${contact.id}`}>
           保存

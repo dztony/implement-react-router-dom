@@ -12,18 +12,35 @@ import Edit from "./page/Edit";
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
+    lazy: async() => {
+      const Root = (await import('../src/page/Root')).default;
+      return {
+        Component: Root,
+      };
+    },
     errorElement: <ErrorPage />,
     loader: loaderContactList,
     children: [
       {
         path: '/contact/:contactId',
-        element: <Contact />,
+        // element: <Contact />,
+        lazy: async() => {
+          const Contact = (await import('../src/page/Contact')).default;
+          return {
+            Component: Contact,
+          };
+        },
         loader: getContactById,
       },
       {
         path: '/contact/:contactId/edit',
-        element: <Edit />,
+        // element: <Edit />,
+        lazy: async() => {
+          const Edit = (await import('../src/page/Edit')).default;
+          return {
+            Component: Edit,
+          };
+        },
         loader: getContactById,
       },
     ],
