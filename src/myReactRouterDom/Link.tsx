@@ -1,11 +1,11 @@
-import React, { ReactNode, useCallback } from 'react';
+import React, { ReactNode, useMemo } from 'react';
 import { useNavigate } from "../myReactRouter";
 
 function Link(props: IProps) {
   const { to, onClick, children } = props;
   const navigate = useNavigate();
 
-  const handleOnClick = useCallback(() => {
+  const handleOnClick = useMemo(() => {
     if (onClick) {
       return onClick;
     } else {
@@ -14,10 +14,10 @@ function Link(props: IProps) {
         navigate(to);
       }
     }
-  }, [onClick])
+  }, [])
 
   return (
-    <a onClick={handleOnClick} href={to}>
+    <a href={to} onClick={handleOnClick}>
       {children}
     </a>
   );

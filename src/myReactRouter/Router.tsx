@@ -10,7 +10,6 @@ function Router(props: IProps) {
     };
   }, [navigator]);
 
-  console.log('location - ', location);
   const { pathname } = location;
 
   const locationContext = useMemo(() => {
@@ -21,7 +20,6 @@ function Router(props: IProps) {
     };
   }, [pathname]);
 
-  console.log('locationContext - ', locationContext);
   return (
     <NavigationContext.Provider value={navigationContext}>
       <LocationContext.Provider value={locationContext}>

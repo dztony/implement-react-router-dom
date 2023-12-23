@@ -8,10 +8,10 @@ function App() {
   return (
     <HashRouter>
       <div className={style.header}>
-        <Link to={'/#/home'}>
+        <Link to={'/home'}>
           首页
         </Link>
-        <Link to={'/#/home/1'}>
+        <Link to={'/home/1'}>
           首页 - 1
         </Link>
         <Link to={'/home/1/2'}>
@@ -34,7 +34,9 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />}>
           <Route path="/1" element={<Home1 />}>
-            <Route path="/2" element={<Home2 />} />
+            <Route path="/2" element={<Home2 />}>
+              <Route path='/3' element={<Home3 />} />
+            </Route>
           </Route>
         </Route>
         <Route path="/about" element={<About />} />
@@ -61,6 +63,12 @@ const Home1 = () => (
 const Home2 = () => (
   <div>
     首页2
+    <Outlet />
+  </div>
+);
+const Home3 = () => (
+  <div>
+    首页3
     <Outlet />
   </div>
 );

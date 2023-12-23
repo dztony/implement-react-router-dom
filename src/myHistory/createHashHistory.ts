@@ -21,7 +21,9 @@ function createHashHistory() {
   }
 
   function push(curPath: string) {
+    console.log('导航 path - ', curPath);
     window.location.hash = curPath;
+    console.log('window.location - ', window.location);
   }
 
   window.addEventListener('hashchange', handleHashChange);
