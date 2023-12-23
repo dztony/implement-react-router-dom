@@ -126,7 +126,7 @@ function matchRouteBranch(branch: any, pathname: string) {
 
 function matchRoutes(routes: IRoute[], location: ILocation) {
   const branches = flattenRoutes(routes);
-  let matches: any[] = [];
+  let matches = null;
   const pathname = location.pathname;
   for (let i = 0; matches == null && i < branches.length; ++i) {
     matches = matchRouteBranch(branches[i], pathname) as any[];
