@@ -1,5 +1,5 @@
 import EventEmitter from "./EventEmitter.ts";
-import { ILocation, IHistory, IListener } from "./types.ts";
+import { ILocation, IHistory, IListener, IParams } from "./types.ts";
 
 function createBrowserHistory() {
   const emitter = EventEmitter();
@@ -9,12 +9,12 @@ function createBrowserHistory() {
   };
 
   function handlePopStateChange() {
-    const currentLocation: ILocation = {
-      pathname: window.location.pathname,
+    const params: IParams = {
+      location: {
+        pathname: window.location.pathname,
+      },
     };
-    emitter.emit({
-      location: currentLocation,
-    });
+    emitter.emit(params);
   }
 
   function push(curPath: string) {

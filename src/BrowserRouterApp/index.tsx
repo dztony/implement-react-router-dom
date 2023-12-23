@@ -1,13 +1,14 @@
 import React from 'react';
-import { HashRouter, Link, Outlet, Route, Routes, Navigate } from "../myReactRouterDom";
+import { Link, Outlet, Route, Routes, Navigate, BrowserRouter } from "../myReactRouterDom";
 import style from './index.module.scss';
 
-function App() {
-
-
+function BrowserRouterApp() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className={style.header}>
+        <div>
+          <h1>Browser Router APP</h1>
+        </div>
         <Link to={'/home'}>
           首页
         </Link>
@@ -44,7 +45,7 @@ function App() {
         <Route path="/notFound" element={<NotFound />} />
         <Route path="/navigate" element={<Navigate to="/notFound" />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
@@ -76,4 +77,4 @@ const About = () => <div>关于</div>;
 const List = () => <div>列表</div>;
 const NotFound = () => <div>404</div>;
 
-export default App;
+export default BrowserRouterApp;
