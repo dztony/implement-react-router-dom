@@ -14,6 +14,7 @@ import Home3 from "../../component/Home3";
 import About from "../../component/About";
 import List from "../../component/List";
 import NotFound from "../../component/NotFound";
+import ReactChildrenTest from "../../component/ReactChildrenTest";
 
 function BrowserRouterApp() {
   return (
@@ -43,6 +44,8 @@ function BrowserRouterApp() {
         <Link to={'/navigate'}>
           重定向
         </Link>
+
+        <ReactChildrenTest />
       </div>
 
       <Routes>

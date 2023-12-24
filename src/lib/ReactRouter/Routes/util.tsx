@@ -166,9 +166,9 @@ function _renderMatches(matches: any[], parentMatches: any[] = []) {
 export function useRoutes(routes: IRoute[]) {
   const location = useLocation();
   let { matches: parentMatches } = React.useContext(RouteContext);
-  console.log('routes - ', routes, location, parentMatches);
+  // console.log('routes - ', routes, location, parentMatches);
   const matches: any[] = matchRoutes(routes, location) ?? [];
-  console.log('matches - ', matches);
+  // console.log('matches - ', matches);
   const renderedMatches = _renderMatches(matches, parentMatches);
 
   console.log('renderedMatches - ', renderedMatches);
