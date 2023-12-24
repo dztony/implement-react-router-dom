@@ -2,7 +2,7 @@ import EventEmitter from "./EventEmitter.ts";
 import { ILocation, IHistory, IListener, IParams } from "./types.ts";
 
 function createBrowserHistory() {
-  const emitter = EventEmitter();
+  const event = EventEmitter();
 
   let location: ILocation = {
     pathname: window.location.pathname || '/',
@@ -14,7 +14,7 @@ function createBrowserHistory() {
         pathname: window.location.pathname,
       },
     };
-    emitter.notify(params);
+    event.notify(params);
   }
 
   function push(curPath: string) {
@@ -24,13 +24,13 @@ function createBrowserHistory() {
     location = {
       pathname: curPath,
     };
-    emitter.notify({
+    event.notify({
       location,
     });
   }
 
   function listen(listener: IListener) {
-    return emitter.subscribe(listener);
+    return event.subscribe(listener);
   }
 
   // 监听浏览器前进后退
