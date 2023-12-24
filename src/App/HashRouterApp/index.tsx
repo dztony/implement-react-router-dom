@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Link, Outlet, Route, Routes, Navigate } from "../myReactRouterDom";
+import { HashRouter, Link, Outlet, Route, Routes, Navigate } from "../../myReactRouterDom";
 import style from './index.module.scss';
 
 function HashRouterApp() {

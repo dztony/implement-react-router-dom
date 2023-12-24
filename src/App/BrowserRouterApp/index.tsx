@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Outlet, Route, Routes, Navigate, BrowserRouter } from "../myReactRouterDom";
+import { Link, Outlet, Route, Routes, Navigate, BrowserRouter } from "../../myReactRouterDom";
 import style from './index.module.scss';
 
 function BrowserRouterApp() {
