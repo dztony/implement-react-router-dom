@@ -1,14 +1,29 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { createBrowserHistory } from "../myHistory";
 import { Router } from "../myReactRouter";
+import { IParams } from "../myHistory/types.ts";
 
 function BrowserRouter(props: IProps) {
   const { children } = props;
 
-  const history = createBrowserHistory();
+
+  const historyRef = useRef(createBrowserHistory());
+  const history = historyRef.current;
+  const [params, setParams] = useState<IParams>({
+    location: history.location,
+  });
+
+  useEffect(() => {
+    const unsubscribe = history.listen(setParams);
+    return unsubscribe;
+  }, [history])
+
 
   return (
-    <Router navigator={history} location={history.location}>
+    <Router
+      navigator={history}
+      location={params.location}
+    >
       {children}
     </Router>
   );

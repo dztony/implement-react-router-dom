@@ -6,10 +6,6 @@ function HashRouter(props: IProps) {
   const { children } = props;
 
   const historyRef = useRef<any>(createHashHistory());
-  // if (historyRef.current == null) {
-  //   historyRef.current = createHashHistory();
-  // }
-
   let history = historyRef.current;
   const [state, setState] = useState({
     location: history.location,
