@@ -1,5 +1,5 @@
 import React, { ReactNode, useMemo } from 'react';
-import { ILocation, IPush } from "../myHistory/types.ts";
+import { ILocation, IPush } from "../History/types.ts";
 import { LocationContext, NavigationContext } from "./context.ts";
 
 function Router(props: IProps) {

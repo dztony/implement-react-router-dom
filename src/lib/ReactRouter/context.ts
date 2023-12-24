@@ -1,6 +1,6 @@
 import React, { createContext, ReactElement } from "react";
-import { ILocation } from "../myHistory";
-import { IPush } from "../myHistory/types.ts";
+import { ILocation } from "../History";
+import { IPush } from "../History/types.ts";
 
 type ILocationContext = {
   location: ILocation;

@@ -5,7 +5,7 @@ import {
   Route,
   Routes,
   Navigate,
-} from "../../myReactRouterDom";
+} from "../../lib/ReactRouterDom";
 import style from './index.module.scss';
 import Home from "../../component/Home";
 import Home1 from "../../component/Home1";

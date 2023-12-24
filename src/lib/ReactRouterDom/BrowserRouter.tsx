@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
-import { createBrowserHistory } from "../myHistory";
-import { Router } from "../myReactRouter";
-import { IParams } from "../myHistory/types.ts";
+import { createBrowserHistory } from "../History";
+import { Router } from "../ReactRouter";
+import { IParams } from "../History/types.ts";
 
 function BrowserRouter(props: IProps) {
   const { children } = props;

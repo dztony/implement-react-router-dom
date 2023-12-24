@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react"
-import { ILocation } from "../../myHistory";
+import { ILocation } from "../../History";
 import { RouteContext } from "../context.ts";
 import { useLocation } from "../hook.tsx";
 

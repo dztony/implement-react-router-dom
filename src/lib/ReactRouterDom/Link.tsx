@@ -1,5 +1,5 @@
 import React, { ReactNode, useMemo } from 'react';
-import { useNavigate } from "../myReactRouter";
+import { useNavigate } from "../ReactRouter";
 
 function Link(props: IProps) {
   const { to, onClick, children } = props;

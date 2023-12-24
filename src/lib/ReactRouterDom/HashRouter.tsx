@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
-import { Router } from "../myReactRouter";
-import { createHashHistory } from "../myHistory";
+import { Router } from "../ReactRouter";
+import { createHashHistory } from "../History";
 
 function HashRouter(props: IProps) {
   const { children } = props;

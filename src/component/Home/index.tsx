@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from "../../myReactRouter";
+import { Outlet } from "../../lib/ReactRouter";
 
 function Home() {
   return (

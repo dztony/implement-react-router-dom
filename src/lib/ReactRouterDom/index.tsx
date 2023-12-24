@@ -8,7 +8,7 @@ export {
   Navigate,
   Routes,
   Outlet,
-} from '../myReactRouter';
+} from '../ReactRouter';
 
 export {
   Link,
