@@ -139,7 +139,7 @@ function _renderMatches(matches: any[], parentMatches: any[] = []) {
 }
 
 
-export function useRoutes(routes: IRoute[]) {
+export function renderByRoutes(routes: IRoute[]) {
   const location = useLocation();
   let { matches: parentMatches } = React.useContext(RouteContext);
   const matches: any[] = matchRoutes(routes, location) ?? [];
