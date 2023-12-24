@@ -1,6 +1,19 @@
 import React from 'react';
-import { Link, Outlet, Route, Routes, Navigate, BrowserRouter } from "../../myReactRouterDom";
+import {
+  Link,
+  Route,
+  Routes,
+  Navigate,
+  BrowserRouter,
+} from "../../myReactRouterDom";
 import style from './index.module.scss';
+import Home from "../../component/Home";
+import Home1 from "../../component/Home1";
+import Home2 from "../../component/Home2";
+import Home3 from "../../component/Home3";
+import About from "../../component/About";
+import List from "../../component/List";
+import NotFound from "../../component/NotFound";
 
 function BrowserRouterApp() {
   return (
@@ -48,33 +61,5 @@ function BrowserRouterApp() {
     </BrowserRouter>
   );
 }
-
-const Home = () => (
-  <div>
-    首页
-    <Outlet />
-  </div>
-);
-const Home1 = () => (
-  <div>
-    首页1
-    <Outlet />
-  </div>
-);
-const Home2 = () => (
-  <div>
-    首页2
-    <Outlet />
-  </div>
-);
-const Home3 = () => (
-  <div>
-    首页3
-    <Outlet />
-  </div>
-);
-const About = () => <div>关于</div>;
-const List = () => <div>列表</div>;
-const NotFound = () => <div>404</div>;
 
 export default BrowserRouterApp;
