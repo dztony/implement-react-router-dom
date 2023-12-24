@@ -19,6 +19,7 @@ import ReactChildrenTest from "../../component/ReactChildrenTest";
 function BrowserRouterApp() {
   return (
     <BrowserRouter>
+      {/* layout 部分 */}
       <div className={style.header}>
         <div>
           <h1>Browser Router APP</h1>
@@ -45,7 +46,7 @@ function BrowserRouterApp() {
           重定向
         </Link>
 
-        <ReactChildrenTest />
+        {/*<ReactChildrenTest />*/}
       </div>
 
       <Routes>

@@ -1,4 +1,4 @@
-import { IListener, ILocation, IParams } from "./types.ts";
+import { IListener, IParams } from "./types.ts";
 
 function EventEmitter() {
   let events: IListener[] = [];
@@ -10,13 +10,13 @@ function EventEmitter() {
     };
   }
 
-  function emit(params: IParams) {
+  function notify(params: IParams) {
     events.forEach(item => item(params));
   }
 
   return {
     subscribe,
-    emit,
+    notify,
   };
 }
 

@@ -14,7 +14,7 @@ function createBrowserHistory() {
         pathname: window.location.pathname,
       },
     };
-    emitter.emit(params);
+    emitter.notify(params);
   }
 
   function push(curPath: string) {
@@ -24,13 +24,13 @@ function createBrowserHistory() {
     location = {
       pathname: curPath,
     };
-    emitter.emit({
+    emitter.notify({
       location,
     });
   }
 
   function listen(listener: IListener) {
-    emitter.subscribe(listener);
+    return emitter.subscribe(listener);
   }
 
   // 监听浏览器前进后退

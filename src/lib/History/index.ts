@@ -1,6 +1,6 @@
 import createBrowserHistory from "./createBrowserHistory.ts";
 import createHashHistory from "./createHashHistory.ts";
-import type { IHistory, IListener, ILocation } from './types.ts';
+import type { IHistory, IListener, ILocation, IParams } from './types.ts';
 
 export {
   createHashHistory,
@@ -11,4 +11,5 @@ export type {
   IHistory,
   IListener,
   ILocation,
+  IParams
 };

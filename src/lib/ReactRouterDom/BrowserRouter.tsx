@@ -1,11 +1,10 @@
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
-import { createBrowserHistory } from "../History";
+import { createBrowserHistory, IParams } from "../History";
 import { Router } from "../ReactRouter";
-import { IParams } from "../History/types.ts";
+
 
 function BrowserRouter(props: IProps) {
   const { children } = props;
-
 
   const historyRef = useRef(createBrowserHistory());
   const history = historyRef.current;
@@ -17,7 +16,6 @@ function BrowserRouter(props: IProps) {
     const unsubscribe = history.listen(setParams);
     return unsubscribe;
   }, [history])
-
 
   return (
     <Router

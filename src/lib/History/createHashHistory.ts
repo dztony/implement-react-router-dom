@@ -13,7 +13,7 @@ function createHashHistory() {
         pathname: window.location.hash.slice(1),
       },
     };
-    emitter.emit(curParams);
+    emitter.notify(curParams);
   }
 
   function listen(listener: IListener) {
