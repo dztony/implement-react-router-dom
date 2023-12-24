@@ -1,9 +1,9 @@
-import { IListener, IParams } from "./types.ts";
+import { IListener, IParams, IUnsubscribe } from "./types.ts";
 
 function EventEmitter() {
   let events: IListener[] = [];
 
-  function subscribe(consumer: IListener) {
+  function subscribe(consumer: IListener): IUnsubscribe {
     events.push(consumer);
     return () => {
       events = events.filter(item => item !== consumer);

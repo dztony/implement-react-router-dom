@@ -1,21 +1,20 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useLayoutEffect, useState } from 'react';
 import { createBrowserHistory, IParams } from "../History";
 import { Router } from "../ReactRouter";
 
+const history = createBrowserHistory();
 
 function BrowserRouter(props: IProps) {
   const { children } = props;
 
-  const historyRef = useRef(createBrowserHistory());
-  const history = historyRef.current;
   const [params, setParams] = useState<IParams>({
     location: history.location,
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const unsubscribe = history.listen(setParams);
     return unsubscribe;
-  }, [history])
+  }, []);
 
   return (
     <Router

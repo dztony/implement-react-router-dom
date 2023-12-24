@@ -10,9 +10,11 @@ export type IPush = (path: string) => void;
 
 export type IListener = (p: IParams) => void;
 
+export type IUnsubscribe = () => void;
+
 export type IHistory = {
   location: ILocation;
   push: IPush;
-  listen: (listener: IListener) => () => void;
+  listen: (listener: IListener) => IUnsubscribe;
 };
 
