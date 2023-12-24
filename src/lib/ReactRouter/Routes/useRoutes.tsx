@@ -1,33 +1,9 @@
-import React, { ReactElement } from "react"
+import React from "react"
 import { ILocation } from "../../History";
 import { RouteContext } from "../context.ts";
 import { useLocation } from "../hook.tsx";
+import { IRoute } from "./type.ts";
 
-export type IRoute = {
-  element: ReactElement;
-  path: string;
-  children: IRoute[];
-};
-
-// 可以把 <Route> 类型的 react element 对象，变成了普通的 route 对象结构
-export function createRoutesFromChildren(children: any[]) {
-  const routes: IRoute[] = [];
-
-  React.Children.forEach(children, (element: ReactElement) => {
-    let curRoute: IRoute = {
-      element: element.props.element,
-      path: element.props.path,
-      children: [],
-    };
-    if (element.props.children) {
-      curRoute['children'] = createRoutesFromChildren(element.props.children);
-    }
-
-    routes.push(curRoute);
-  });
-
-  return routes;
-}
 
 const joinPaths = (paths: string[]) => paths.join("/").replace(/\/\/+/g, "/");
 
@@ -166,11 +142,7 @@ function _renderMatches(matches: any[], parentMatches: any[] = []) {
 export function useRoutes(routes: IRoute[]) {
   const location = useLocation();
   let { matches: parentMatches } = React.useContext(RouteContext);
-  // console.log('routes - ', routes, location, parentMatches);
   const matches: any[] = matchRoutes(routes, location) ?? [];
-  // console.log('matches - ', matches);
   const renderedMatches = _renderMatches(matches, parentMatches);
-
-  console.log('renderedMatches - ', renderedMatches);
   return renderedMatches;
 }

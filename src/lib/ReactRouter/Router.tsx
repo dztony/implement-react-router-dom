@@ -1,5 +1,5 @@
 import React, { ReactNode, useMemo } from 'react';
-import { ILocation, IPush } from "../History/types.ts";
+import { IHistory, ILocation } from "../History";
 import { LocationContext, NavigationContext } from "./context.ts";
 
 function Router(props: IProps) {
@@ -30,9 +30,7 @@ function Router(props: IProps) {
 }
 
 type IProps = {
-  navigator: {
-    push: IPush;
-  };
+  navigator: IHistory;
   location: ILocation;
   children: ReactNode;
 };

@@ -1,8 +1,10 @@
 import React, { ReactElement } from 'react';
-import { createRoutesFromChildren, useRoutes } from "./util.tsx";
+import { useRoutes } from "./useRoutes.tsx";
+import createRoutesFromChildren from "./createRoutesFromChildren.ts";
 
 function Routes(props: any) {
-  return useRoutes(createRoutesFromChildren(props.children));
+  const curRoutes = createRoutesFromChildren(props.children);
+  return useRoutes(curRoutes);
 }
 
 export default Routes;
