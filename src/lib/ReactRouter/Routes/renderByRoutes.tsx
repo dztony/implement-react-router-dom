@@ -138,7 +138,6 @@ function _renderMatches(matches: any[], parentMatches: any[] = []) {
   }, null);
 }
 
-
 export function renderByRoutes(routes: IRoute[]) {
   const location = useLocation();
   let { matches: parentMatches } = React.useContext(RouteContext);
