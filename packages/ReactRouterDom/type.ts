@@ -1,4 +1,5 @@
 import { IHistoryPush, ILocation } from "../History";
+import { ReactElement } from "react";
 
 export type IBrowserContext = {
   location: ILocation;
@@ -6,3 +7,9 @@ export type IBrowserContext = {
 };
 
 export type IRouteParentContext = {};
+
+export type IRoute = {
+  path: string;
+  element: ReactElement;
+  children?: IRoute[];
+};

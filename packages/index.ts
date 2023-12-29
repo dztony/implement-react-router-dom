@@ -10,6 +10,8 @@ export type {
 export {
   BrowserRouter,
   Link,
+  Route,
+  Routes,
 
   useNavigate,
   useLocation,
