@@ -2,6 +2,11 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import css from './index.module.scss';
 import { BrowserRouter, Link, Route, Routes, Outlet } from "../../../packages";
 import DisplayPathname from "../DisplayPathname";
+import Home from "../Home";
+import User from "../User";
+import Profile from "../Profile";
+import Blog from "../Blog";
+import Common from "../Common";
 
 function App() {
 
@@ -32,13 +37,13 @@ function App() {
       </div>
 
       <Routes>
-        <Route path={'/home'} element={<div>home pag<Outlet /></div>}>
-          <Route path={'/user'} element={<div>user page<Outlet /></div>}>
-            <Route path={'/profile'} element={<div>profile page</div>} />
+        <Route path={'/home'} element={<Home />}>
+          <Route path={'/user'} element={<User />}>
+            <Route path={'/profile'} element={<Profile />} />
           </Route>
-          <Route path={'/blog'} element={<div>blog page</div>} />
+          <Route path={'/blog'} element={<Blog />} />
         </Route>
-        <Route path={'/666'} element={<div>666 page</div>} />
+        <Route path={'/666'} element={<Common />} />
 
         <Route path={'/plan'} element={<div>plan page<Outlet /></div>}>
           <Route path={'/list'} element={<div>plan list page</div>} />
