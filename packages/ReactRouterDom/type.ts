@@ -1,12 +1,14 @@
 import { IHistoryPush, ILocation } from "../History";
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 
 export type IBrowserContext = {
   location: ILocation;
   navigate: IHistoryPush;
 };
 
-export type IRouteParentContext = {};
+export type IRouteParentContext = {
+  outlet: ReactNode;
+};
 
 export type IRoute = {
   path: string;

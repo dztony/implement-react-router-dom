@@ -12,6 +12,7 @@ export {
   Link,
   Route,
   Routes,
+  Outlet,
 
   useNavigate,
   useLocation,
