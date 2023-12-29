@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 
 //@ts-ignore
 function Route(props: IProps) {
@@ -8,6 +8,7 @@ function Route(props: IProps) {
 type IProps = {
   path: string;
   element: ReactElement;
+  children?: ReactNode;
 }
 
 export default Route;

@@ -1,9 +1,11 @@
 import React, { ReactElement, ReactNode } from 'react';
 import createRoutesFromChildren from "./createRoutesFromChildren.ts";
+import createBranchesFromRoutes from "./createBranchesFromRoutes.ts";
 
 function Routes(props: IProps) {
   const nestRouteList = createRoutesFromChildren(props.children);
-  console.log('nestRouteList - ', nestRouteList);
+  const branchList = createBranchesFromRoutes(nestRouteList);
+  console.log('branchList - ', branchList);
   return null;
 }
 

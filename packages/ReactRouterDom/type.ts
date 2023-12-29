@@ -11,5 +11,10 @@ export type IRouteParentContext = {};
 export type IRoute = {
   path: string;
   element: ReactElement;
-  children?: IRoute[];
+  children: IRoute[];
+};
+
+export type IBranch = {
+  relativePath: string;
+  metaList: IRoute[];
 };

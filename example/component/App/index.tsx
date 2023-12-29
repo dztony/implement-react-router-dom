@@ -23,8 +23,17 @@ function App() {
       </div>
 
       <Routes>
-        <Route path={'/home'} element={<div>home page</div>} />
+        <Route path={'/home'} element={<div>home page</div>}>
+          <Route path={'/user'} element={<div>user page</div>}>
+            <Route path={'/profile'} element={<div>profile page</div>} />
+          </Route>
+          <Route path={'/blog'} element={<div>blog page</div>} />
+        </Route>
         <Route path={'/666'} element={<div>666 page</div>} />
+
+        <Route path={'/plan'} element={<div>plan page</div>}>
+          <Route path={'/list'} element={<div>plan list page</div>} />
+        </Route>
       </Routes>
     </BrowserRouter>
 
